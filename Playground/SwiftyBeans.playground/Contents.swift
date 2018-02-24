@@ -8,7 +8,12 @@ struct Theme {
     
     struct Text {
         static let
-            heading = Style.bean(.fontSize(20), .textColor(.black), .textColor(.white))
+            heading = Style.bean(
+                .fontSize(20),
+                .textColor(.black),
+                .textColor(.white),
+                .fontName("Avenir-Black")
+            )
     }
 }
 

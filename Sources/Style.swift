@@ -46,6 +46,8 @@ public enum Style {
     
     /**
      Set UILabels font with name
+     
+     - important: This will overwrite previous changes to font property such as bold or italic
      */
     case fontName(String)
     
@@ -53,6 +55,16 @@ public enum Style {
      Set UILabels font size
      */
     case fontSize(CGFloat)
+    
+    /**
+     Set bold font face
+    */
+    case bold
+    
+    /**
+     Set italic font face
+    */
+    case italic
     
     /**
      Set UILabels text alignment
@@ -195,7 +207,7 @@ public enum Style {
     /**
      Create background linear gradient
      
-     NOTE: Adds inner UIView that autorizes using AutoLayout. View is added below all existing subviews.
+     - important: Adds inner UIView that autoresizes using AutoLayout. View is added below all existing subviews.
      
      - parameter direction: Gradient direction value specified in GradientDirection enum. Defaults to .toBottom.
      - parameter locations: Optional locations

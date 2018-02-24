@@ -43,6 +43,20 @@ extension Style {
             let label = view as! UILabel
             label.font = label.font.withSize(size)
             
+        case bold where view is UILabel:
+            let label = view as! UILabel
+            let traits = UIFontDescriptorSymbolicTraits([.traitBold])
+            if let descriptor = label.font.fontDescriptor.withSymbolicTraits(traits) {
+                label.font = UIFont(descriptor: descriptor, size: label.font.pointSize)
+            }
+            
+        case italic where view is UILabel:
+            let label = view as! UILabel
+            let traits = UIFontDescriptorSymbolicTraits([.traitItalic])
+            if let descriptor = label.font.fontDescriptor.withSymbolicTraits(traits) {
+                label.font = UIFont(descriptor: descriptor, size: label.font.pointSize)
+            }
+            
         case textAlign(let alignment) where view is UILabel:
             (view as! UILabel).textAlignment = alignment
             

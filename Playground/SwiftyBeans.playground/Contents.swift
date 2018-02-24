@@ -4,7 +4,13 @@ import SwiftyBeans
 
 // ### Beans
 
-let heading: Style = .bean(.fontSize(20), .textColor(.black))
+struct Theme {
+    
+    struct Text {
+        static let
+            heading = Style.bean(.fontSize(20), .textColor(.black), .textColor(.white))
+    }
+}
 
 // ### Controller
 
@@ -12,9 +18,9 @@ class BeanyController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        let label = UILabel().style(heading)
-        view.backgroundColor = .white
+        view.style(.linearGradient(direction: .toBottom, .red, .blue))
         
+        let label = UILabel().style(Theme.Text.heading)
         label.frame = CGRect(x: 150, y: 200, width: 200, height: 20)
         label.text = "Hello World!"
         view.addSubview(label)

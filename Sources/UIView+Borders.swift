@@ -71,23 +71,23 @@ extension UIView {
     
     @discardableResult
     func addBorders(edges: UIRectEdge, color: UIColor = .gray, thickness: CGFloat = 1.0) -> Self {
-        var border: Border?
         if edges.contains(.top) || edges.contains(.all) {
-            border = TopBorder(color: color, thickness: thickness)
+            addBorder(TopBorder(color: color, thickness: thickness))
         }
         if edges.contains(.left) || edges.contains(.all) {
-            border = LeftBorder(color: color, thickness: thickness)
+            addBorder(LeftBorder(color: color, thickness: thickness))
         }
         if edges.contains(.right) || edges.contains(.all) {
-            border = RightBorder(color: color, thickness: thickness)
+            addBorder(RightBorder(color: color, thickness: thickness))
         }
         if edges.contains(.bottom) || edges.contains(.all) {
-            border = BottomBorder(color: color, thickness: thickness)
-        }
-        if let border = border {
-            addSubview(border)
-            border.setup()
+            addBorder(BottomBorder(color: color, thickness: thickness))
         }
         return self
+    }
+    
+    private func addBorder(_ border: Border) {
+        addSubview(border)
+        border.setup()
     }
 }

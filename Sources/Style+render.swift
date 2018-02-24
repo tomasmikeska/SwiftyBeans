@@ -10,10 +10,13 @@ import UIKit
 
 extension Style {
     
+    /**
+     Render specified style
+     */
     static func render(_ view: UIView, _ style: Style) {
         switch style {
             
-        case background(let color):
+        case backgroundColor(let color):
             view.backgroundColor = color
             
         case image(let image) where view is UIImageView:
@@ -80,8 +83,11 @@ extension Style {
         case alpha(let alpha):
             view.alpha = alpha
             
-        case invisible(let invisible):
-            view.isHidden = invisible
+        case visible:
+            view.isHidden = false
+            
+        case invisible:
+            view.isHidden = true
             
         case styleModule(let styles):
             Style.render(view, styles)
@@ -99,10 +105,16 @@ extension Style {
             view.layer.shadowOffset = offset
             view.layer.shadowRadius = radius
             
+        case styleLinearGradient(colors: let colors, locations: let locations, start: let start, end: let end):
+            view.addGradientLayer(colors: colors, locations: locations, start: start, end: end)
+            
         default: ()
         }
     }
     
+    /**
+     Render multiple styles
+    */
     static func render(_ view: UIView, _ styles: [Style]) {
         for style in styles {
             Style.render(view, style)

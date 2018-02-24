@@ -17,7 +17,7 @@ public enum Style {
     /**
      Set UIViews background color
      */
-    case background(UIColor)
+    case backgroundColor(UIColor)
     
     /**
      Set UIViews background image
@@ -120,9 +120,14 @@ public enum Style {
     case alpha(CGFloat)
     
     /**
+     Make UIView visible
+     */
+    case visible
+    
+    /**
      Make UIView invisible
      */
-    case invisible(Bool)
+    case invisible
     
     // Dont use these straight
     
@@ -132,9 +137,11 @@ public enum Style {
     
     case styleBorderOneSided(edges: UIRectEdge, thick: CGFloat, color: UIColor)
     
+    case styleLinearGradient(colors: [UIColor], locations: [NSNumber]?, start: CGPoint, end: CGPoint)
+    
     indirect case styleModule([Style])
     
-    // --- HELPERS
+    // MARK: - HELPERS
     
     /**
      Specify drop shadow
@@ -145,6 +152,7 @@ public enum Style {
      - parameter horizontalOffset: Shadow offset on horizontal axis
      - parameter offset: Shadow offset, overwrites vertical and horizontal offset
      - parameter radius: Shadow radius
+     - returns: Style
      */
     public static func shadow(
         color: UIColor = .black,
@@ -167,6 +175,7 @@ public enum Style {
      - parameter edges: Specify edges
      - parameter thick: Border thickness
      - parameter color: Border color
+     - returns: Style
      */
     public static func border(edges: UIRectEdge, thick: CGFloat = 1.0, color: UIColor = .black) -> Style {
         return .styleBorderOneSided(edges: edges, thick: thick, color: color)
@@ -177,11 +186,40 @@ public enum Style {
      
      - parameter thick: Border thickness
      - parameter color: Border color
+     - returns: Style
      */
     public static func border(thick: CGFloat = 1.0, color: UIColor = .black) -> Style {
         return .styleBorder(thick: thick, color: color)
     }
     
+    /**
+     Create background linear gradient
+     
+     NOTE: Adds inner UIView that autorizes using AutoLayout. View is added below all existing subviews.
+     
+     - parameter direction: Gradient direction value specified in GradientDirection enum. Defaults to .toBottom.
+     - parameter locations: Optional locations
+     - parameter colors: Colors variadic parameters
+     - returns: Style
+    */
+    public static func linearGradient(direction: GradientDirection = .toBottom,
+                                      locations: [NSNumber]? = nil,
+                                      _ colors: UIColor...) -> Style {
+        let points = direction.getPoints()
+        return .styleLinearGradient(
+            colors: colors,
+            locations: locations,
+            start: points.0,
+            end: points.1
+        )
+    }
+    
+    /**
+     Module that bundles multiple styles together
+     
+     - parameter styles: Styles or other beans
+     - returns: Style
+    */
     public static func bean(_ styles: Style...) -> Style {
         return Style.styleModule(styles)
     }

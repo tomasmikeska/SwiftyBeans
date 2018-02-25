@@ -11,8 +11,7 @@ struct Theme {
             heading = Style.bean(
                 .fontSize(20),
                 .textColor(.black),
-                .textColor(.white),
-                .fontName("Avenir-Black")
+                .textColor(.white)
             )
     }
 }

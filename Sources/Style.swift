@@ -46,8 +46,6 @@ public enum Style {
     
     /**
      Set UILabels font with name
-     
-     - important: This will overwrite previous changes to font property such as bold or italic
      */
     case fontName(String)
     
@@ -55,16 +53,6 @@ public enum Style {
      Set UILabels font size
      */
     case fontSize(CGFloat)
-    
-    /**
-     Set bold font face
-    */
-    case bold
-    
-    /**
-     Set italic font face
-    */
-    case italic
     
     /**
      Set UILabels text alignment
@@ -166,13 +154,12 @@ public enum Style {
      - parameter radius: Shadow radius
      - returns: Style
      */
-    public static func shadow(
-        color: UIColor = .black,
-        opacity: Float = 0.3,
-        verticalOffset: CGFloat = 0,
-        horizontalOffset: CGFloat = 0,
-        offset: CGSize? = nil,
-        radius: CGFloat = 8) -> Style {
+    public static func shadow(color: UIColor = .black,
+                              opacity: Float = 0.3,
+                              verticalOffset: CGFloat = 0,
+                              horizontalOffset: CGFloat = 0,
+                              offset: CGSize? = nil,
+                              radius: CGFloat = 8) -> Style {
         return .styleShadow(
             color: color,
             opacity: opacity,

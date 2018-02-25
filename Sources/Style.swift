@@ -190,10 +190,23 @@ public enum Style {
         return .styleBorder(thick: thick, color: color)
     }
     
+    /**
+     Set UIView corner radius on all corners
+     
+     - parameter radius: Radius applied on all corners
+     - returns: Style
+    */
     public static func cornerRadius(_ radius: CGFloat) -> Style {
         return .styleCornerRadiusAll(radius)
     }
     
+    /**
+     Set UIView corner radius on specified corners
+     
+     - parameter corner: Rounded corners
+     - parameter radius: Radius applied on specified corners
+     - returns: Style
+     */
     public static func cornerRadius(corner: Corner, _ radius: CGFloat) -> Style {
         return .styleCornerRadius(corner: corner, radius: radius)
     }

@@ -8,6 +8,11 @@
 
 import UIKit
 
+/**
+ Abstract border view used by one-sided borders
+ 
+ - note: Use only extended classes below
+ */
 class Border: UIView {
     
     fileprivate var thickness: CGFloat = 1.0
@@ -18,8 +23,14 @@ class Border: UIView {
         self.backgroundColor = color
     }
     
+    /**
+     Override in child classes
+    */
     func setup() {}
     
+    /**
+     Visual AutoLayout helper
+    */
     fileprivate func visualConstraint(_ visual: String) {
         guard let superview = superview else { return }
         superview.addConstraints(NSLayoutConstraint.constraints(
@@ -30,6 +41,8 @@ class Border: UIView {
         ))
     }
 }
+
+// MARK: - Borders
 
 class TopBorder: Border {
     
@@ -69,6 +82,15 @@ class LeftBorder: Border {
 
 extension UIView {
     
+    /**
+     Add border to view
+     
+     - parameter edges: Specifies edges with borders
+     - parameter color: Color of borders
+     - parameter thickness: Thickness in CGFloat
+     - returns: Self
+     - note: adding new borders does *not* remove existing borders
+    */
     @discardableResult
     func addBorders(edges: UIRectEdge, color: UIColor = .gray, thickness: CGFloat = 1.0) -> Self {
         if edges.contains(.top) || edges.contains(.all) {
@@ -86,6 +108,7 @@ extension UIView {
         return self
     }
     
+    // Helper function
     private func addBorder(_ border: Border) {
         addSubview(border)
         border.setup()

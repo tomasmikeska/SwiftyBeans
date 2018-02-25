@@ -15,7 +15,6 @@
 		125C6E582041FF350049E0AD /* GradientDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125C6E572041FF350049E0AD /* GradientDirection.swift */; };
 		125C6E5B20420FDA0049E0AD /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125C6E5A20420FDA0049E0AD /* Gradient.swift */; };
 		125C6E5D204211800049E0AD /* GradientLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125C6E5C204211800049E0AD /* GradientLayerView.swift */; };
-		125C6E632042D75C0049E0AD /* UIView+roundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125C6E622042D75C0049E0AD /* UIView+roundCorners.swift */; };
 		125C6E652042D8FE0049E0AD /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125C6E642042D8FE0049E0AD /* Corner.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +30,6 @@
 		125C6E572041FF350049E0AD /* GradientDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientDirection.swift; sourceTree = "<group>"; };
 		125C6E5A20420FDA0049E0AD /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		125C6E5C204211800049E0AD /* GradientLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayerView.swift; sourceTree = "<group>"; };
-		125C6E622042D75C0049E0AD /* UIView+roundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+roundCorners.swift"; sourceTree = "<group>"; };
 		125C6E642042D8FE0049E0AD /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +69,6 @@
 				120F088D2040B4940038A90F /* Style+render.swift */,
 				120F088B2040B4370038A90F /* UIView+style.swift */,
 				120F08932040B8EC0038A90F /* UIView+Borders.swift */,
-				125C6E622042D75C0049E0AD /* UIView+roundCorners.swift */,
 				125C6E642042D8FE0049E0AD /* Corner.swift */,
 				120F08802040B39F0038A90F /* SwiftyBeans.h */,
 				120F08812040B39F0038A90F /* Info.plist */,
@@ -199,7 +196,6 @@
 				120F088C2040B4370038A90F /* UIView+style.swift in Sources */,
 				125C6E5D204211800049E0AD /* GradientLayerView.swift in Sources */,
 				125C6E582041FF350049E0AD /* GradientDirection.swift in Sources */,
-				125C6E632042D75C0049E0AD /* UIView+roundCorners.swift in Sources */,
 				120F088E2040B4940038A90F /* Style+render.swift in Sources */,
 				120F088A2040B3E70038A90F /* Style.swift in Sources */,
 				125C6E5B20420FDA0049E0AD /* Gradient.swift in Sources */,

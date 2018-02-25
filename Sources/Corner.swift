@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Corner enum used when adding corner radius
+ */
 public enum Corner {
     // Single
     case topLeft
@@ -20,6 +23,7 @@ public enum Corner {
     case left
     case right
     
+    // Maps Corner to CACornerMask
     func toCornerMask() -> CACornerMask {
         switch self {
         case .topLeft: return .layerMinXMinYCorner

@@ -75,11 +75,6 @@ public enum Style {
     case clipsToBounds(Bool)
     
     /**
-     Set UIViews cornerRadius
-     */
-    case cornerRadius(CGFloat)
-    
-    /**
      Set UIViews transform scale
      */
     case scale(CGFloat)
@@ -135,6 +130,10 @@ public enum Style {
     
     case styleBorder(thick: CGFloat, color: UIColor)
     
+    case styleCornerRadiusAll(CGFloat)
+    
+    case styleCornerRadius(corner: Corner, radius: CGFloat)
+    
     case styleBorderOneSided(edges: UIRectEdge, thick: CGFloat, color: UIColor)
     
     case styleLinearGradient(colors: [UIColor], locations: [NSNumber]?, start: CGPoint, end: CGPoint)
@@ -189,6 +188,14 @@ public enum Style {
      */
     public static func border(thick: CGFloat = 1.0, color: UIColor = .black) -> Style {
         return .styleBorder(thick: thick, color: color)
+    }
+    
+    public static func cornerRadius(_ radius: CGFloat) -> Style {
+        return .styleCornerRadiusAll(radius)
+    }
+    
+    public static func cornerRadius(corner: Corner, _ radius: CGFloat) -> Style {
+        return .styleCornerRadius(corner: corner, radius: radius)
     }
     
     /**

@@ -55,9 +55,16 @@ extension Style {
         case clipsToBounds(let clips):
             view.clipsToBounds = clips
             
-        case cornerRadius(let radius):
+        case styleCornerRadiusAll(let radius):
             view.layer.cornerRadius = radius
             view.layer.masksToBounds = true
+            
+        case .styleCornerRadius(corner: let corner, radius: let radius):
+            view.layer.cornerRadius = radius
+            view.layer.masksToBounds = true
+            if #available(iOS 11.0, *) {
+                view.layer.maskedCorners = corner.toCornerMask()
+            }
             
         case scale(let scale):
             view.transform = view.transform.scaledBy(x: scale, y: scale)

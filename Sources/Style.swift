@@ -206,6 +206,7 @@ public enum Style {
      - parameter corner: Rounded corners
      - parameter radius: Radius applied on specified corners
      - returns: Style
+     - important: Works only on iOS 11.0+, on lower versions falls to setting radius on all corners
      */
     public static func cornerRadius(corner: Corner, _ radius: CGFloat) -> Style {
         return .styleCornerRadius(corner: corner, radius: radius)

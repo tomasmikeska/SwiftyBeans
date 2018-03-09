@@ -5,7 +5,7 @@
 [![CocoaPods compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org/pods/SteviaLayout)
 [![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/s4cha/Stevia/blob/master/LICENSE)
 
-SwiftyBeans is u μlibrary for declarative iOS view styling. Write reusable, readable
+SwiftyBeans is a μlibrary for declarative iOS view styling. Write reusable, readable
 and concise styles.
 
 ## Usage
@@ -27,11 +27,11 @@ label.style(accentTextStyle, .textAlign(.justified))
 
 ## Documentation
 
-All attributes used are in the Style enum.
+All attributes used are placed in the Style enum.
 
 #### Beans
-Beans are the metaphor for style modules. Beans simply wraps any number of
-styles or another beans as bean is technically also a style.
+Beans are a metaphor for style modules. Beans simply wrap any number of
+styles or another beans as bean is technically a style as well.
 
 ```swift
 let module: Style = .bean(anotherBean, andAnotherBean, .backgroundColor(.red))

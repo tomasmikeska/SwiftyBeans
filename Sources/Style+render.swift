@@ -57,11 +57,9 @@ extension Style {
             
         case styleCornerRadiusAll(let radius):
             view.layer.cornerRadius = radius
-            view.layer.masksToBounds = true
             
         case .styleCornerRadius(corner: let corner, radius: let radius):
             view.layer.cornerRadius = radius
-            view.layer.masksToBounds = true
             if #available(iOS 11.0, *) {
                 view.layer.maskedCorners = corner.toCornerMask()
             }

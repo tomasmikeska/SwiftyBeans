@@ -94,6 +94,9 @@ extension Style {
         case invisible:
             view.isHidden = true
             
+        case .zIndex(let zIndex):
+            view.layer.zPosition = zIndex
+            
         case styleModule(let styles):
             Style.render(view, styles)
             

@@ -83,7 +83,7 @@ Rotate
 .rotate(CGFloat)
 ```
 
-Alpha
+Alpha (opacity)
 ```swift
 .alpha(CGFloat)
 ```
@@ -92,6 +92,11 @@ Visibility
 ```swift
 .visible
 .invisible
+```
+
+Z-index (z-axis elevation)
+```swift
+.zIndex(CGFloat)
 ```
 
 Box shadow

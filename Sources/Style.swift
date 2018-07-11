@@ -124,6 +124,11 @@ public enum Style {
      */
     case invisible
     
+    /**
+     Set UIViews zIndex
+     */
+    case zIndex(CGFloat)
+    
     // Dont use these straight
     
     case styleShadow(color: UIColor, opacity: Float, offset: CGSize, radius: CGFloat)

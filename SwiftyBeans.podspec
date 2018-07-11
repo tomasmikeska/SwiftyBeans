@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SwiftyBeans"
-  s.version      = "0.0.1"
+  s.version      = "0.1.0"
   s.summary      = "Declarative view styles with Swift"
   s.description  = "Declarative view styles with Swift. Write reusable, readable and concise styles."
   s.homepage     = "https://github.com/tomasmikeska/SwiftyBeans"

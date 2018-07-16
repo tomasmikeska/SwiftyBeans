@@ -66,8 +66,8 @@ class BottomBorder: Border {
     
     override func setup() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        visualConstraint("H:|-(0)-[view(==thickness)]")
-        visualConstraint("V:|-(0)-[view]-(0)-|")
+        visualConstraint("V:[view(==thickness)]-(0)-|")
+        visualConstraint("H:|-(0)-[view]-(0)-|")
     }
 }
 
@@ -75,8 +75,8 @@ class LeftBorder: Border {
     
     override func setup() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        visualConstraint("V:[view(==thickness)]-(0)-|")
-        visualConstraint("H:|-(0)-[view]-(0)-|")
+        visualConstraint("H:|-(0)-[view(==thickness)]")
+        visualConstraint("V:|-(0)-[view]-(0)-|")
     }
 }
 

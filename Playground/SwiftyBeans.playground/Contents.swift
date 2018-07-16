@@ -14,10 +14,10 @@ struct Theme {
     
     struct Text {
         static let heading = Style.bean(
-                .fontSize(35),
-                .fontName("AvenirNextCondensed-Bold"),
-                .textColor(.white)
-            )
+            .fontSize(35),
+            .fontName("AvenirNextCondensed-Bold"),
+            .textColor(.white)
+        )
     }
     
     struct Misc {
@@ -42,6 +42,7 @@ struct Theme {
 
 class BeanyController: UIViewController {
     
+    let wrapper = UIView()
     let headingLabel = UILabel()
     let card = UIView()
     let cardStack = UIStackView()
@@ -60,7 +61,7 @@ class BeanyController: UIViewController {
     
     // A few styling examples
     func styleSubviews() {
-        view.style(Theme.Misc.gradient)
+        wrapper.style(Theme.Misc.gradient)
         headingLabel.style(Theme.Text.heading)
         card.style(
             .backgroundColor(.white),
@@ -76,8 +77,9 @@ class BeanyController: UIViewController {
     // MARK: - Basic view layouting
     
     func addSubviews() {
-        view.addSubview(headingLabel)
-        view.addSubview(card)
+        view.addSubview(wrapper)
+        wrapper.addSubview(headingLabel)
+        wrapper.addSubview(card)
         card.addSubview(cardStack)
         cardStack.addArrangedSubview(box1)
         cardStack.addArrangedSubview(box2)
@@ -86,18 +88,26 @@ class BeanyController: UIViewController {
     }
     
     func layoutSubviews() {
+        wrapper.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            wrapper.topAnchor.constraint(equalTo: view.topAnchor),
+            wrapper.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            wrapper.leftAnchor.constraint(equalTo: view.leftAnchor),
+            wrapper.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
+        
         headingLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            headingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            headingLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 90)
+            headingLabel.centerXAnchor.constraint(equalTo: wrapper.centerXAnchor),
+            headingLabel.topAnchor.constraint(equalTo: wrapper.topAnchor, constant: 90)
         ])
         
         card.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            card.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            card.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-            card.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
-            card.topAnchor.constraint(equalTo: view.topAnchor, constant: 200)
+            card.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor),
+            card.leftAnchor.constraint(equalTo: wrapper.leftAnchor, constant: 16),
+            card.rightAnchor.constraint(equalTo: wrapper.rightAnchor, constant: -16),
+            card.topAnchor.constraint(equalTo: wrapper.topAnchor, constant: 200)
         ])
         
         cardStack.translatesAutoresizingMaskIntoConstraints = false

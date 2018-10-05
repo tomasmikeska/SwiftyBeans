@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.platform     = :ios, "10.0"
   s.source       = { :git => "https://github.com/tomasmikeska/SwiftyBeans.git", :tag => "#{s.version}" }
-  s.source_files = "Sources/**/*.{swift,plist}"
+  s.source_files = "Sources/**/*.swift"
 end

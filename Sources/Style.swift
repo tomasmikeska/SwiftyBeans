@@ -32,7 +32,7 @@ public enum Style {
     /**
      Set UIViews contentMode
      */
-    case contentMode(UIViewContentMode)
+    case contentMode(UIView.ContentMode)
     
     /**
      Set UILabels text color

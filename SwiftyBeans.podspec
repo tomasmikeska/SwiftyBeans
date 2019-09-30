@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { "Tomáš Mikeska" => "tomikeska@gmail.com" }
   s.platform     = :ios
   s.platform     = :ios, "10.0"
+  s.swift_versions = '4.0'
   s.source       = { :git => "https://github.com/tomasmikeska/SwiftyBeans.git", :tag => "#{s.version}" }
   s.source_files = "Sources/**/*.swift"
 end
